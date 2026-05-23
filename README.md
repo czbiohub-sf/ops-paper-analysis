@@ -3,38 +3,46 @@
 This repo contains a template for starting new publication repository at the Biohub. It is prepared 
 to help to organize publication related materials.
 
+## Setup
+
+This project uses [uv](https://docs.astral.sh/uv/) for dependency management.
+
+```bash
+# One-time: install uv if you don't have it
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Install dependencies (creates .venv/, reads uv.lock)
+uv sync
+
+# Launch JupyterLab
+uv run jupyter lab
+```
+Needs to be changed
+The notebooks read h5ad files from `/hpc/projects/icd.fast.ops/...`; you must have read access to that path (Biohub HPC).
+
 ## Organization
 The structure of this repo is illustrated below.
 ```
-├── figs 
-├── notebooks                 
-│   ├── analysis.ipynb
-├── scripts                 
-│   ├── analysis.sh
+├── notebooks/
+│   ├── figure_1/
+│   │   ├── experiment_correlations.ipynb
+│   │   └── README.md
+│   ├── figure_2/
+│   │   ├── model_comparison.ipynb
+│   │   └── README.md
+│   └── figure_5/
+│       ├── rna_ops_metrics.ipynb
+│       └── README.md
+├── scripts/
+├── output/              # generated figures (figure_1/, figure_2/, figure_5/)
+├── pyproject.toml
+├── uv.lock
+├── .python-version
 ├── LICENSE
 └── README.md
 ```
 
 ## Usage
-To use this template as the basis of a new publication repo, follow the steps below.
 
-1. Choose a name for your project and create a private repo for it on GitHub under the `czbiohub` organization
-using the CZ Biohub publication template. By convention, project names and repo names should be the 
-same, and they should be dash-separated (for example, `my-new-publication`).
-
-2. Clone your new repo into a directory named after your new project:
-```sh
-git clone git@github.com/czbiohub:my-new-publication
-```
-
-3. You can start populating your publication repository with your content. You can remove the placeholder
-files like `analysis.ipynb` and `analysis.sh` and place your notebooks and scripts into these folders. 
-Also, you can place your figures into `figs` folder to share high-resolution version of your figures.
-
-4. Feel free to create new folders for the files you like to share with your publication. One thing to 
-note, everything on a GitHub repository is version controlled. If you like to share some datasets together
-with your publication, typically a GitHub repository is not the place. We would suggest you to upload 
-the datasets you like to share to a file storage service(like Google Drive, Dropbox, etc.) and provide a
-link to your datasets here in your publication repository.
 
 
