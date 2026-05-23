@@ -1,2 +1,6 @@
 .idea
 .vscode
+.venv/
+.ipynb_checkpoints/
+__pycache__/
+output/

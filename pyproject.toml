@@ -1,0 +1,20 @@
+[project]
+name = "ops-paper-analysis"
+version = "0.1.0"
+description = "Analysis notebooks for the OPS paper"
+requires-python = ">=3.12,<3.13"
+authors = [
+    { name = "Alex Hillsley", email = "alexander.hillsley@czbiohub.org" },
+]
+dependencies = [
+    "anndata",
+    "numpy",
+    "scipy",
+    "pandas",
+    "matplotlib",
+    "seaborn",
+    "tqdm",
+    "umap-learn",
+    "jupyterlab",
+    "ipykernel",
+]
