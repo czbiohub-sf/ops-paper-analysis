@@ -18,6 +18,19 @@ uv sync
 uv run jupyter lab
 ```
 
+## Usage
+
+Notebooks under `notebooks/figure_*/` can be run interactively in JupyterLab,
+or executed end-to-end from the command line with the helper script:
+
+```bash
+# Re-run every notebook in the repo
+scripts/run_notebooks.sh
+
+# Re-run only the notebooks for a single figure
+scripts/run_notebooks.sh figure_5
+```
+
 ## Development
 
 One-time setup after cloning:
@@ -54,8 +67,4 @@ The structure of this repo is illustrated below.
 ├── LICENSE
 └── README.md
 ```
-
-## Usage
-
-
 
