@@ -17,6 +17,15 @@ uv sync
 # Launch JupyterLab
 uv run jupyter lab
 ```
+
+## Development
+
+One-time setup after cloning, to enable the pre-commit hook that strips
+notebook outputs before they're committed:
+
+```bash
+uv run pre-commit install
+```
 Needs to be changed
 The notebooks read h5ad files from `/hpc/projects/icd.fast.ops/...`; you must have read access to that path (Biohub HPC).
 

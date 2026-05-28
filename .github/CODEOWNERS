@@ -1,0 +1,12 @@
+# Reviewers auto-requested on every PR, based on which paths the PR touches.
+# Format: <path>  <@github-handle | verified-email> ...
+# Last matching line wins, so order from generic → specific.
+# Docs: https://docs.github.com/en/repositories/managing-your-repositories-settings-and-customization/customizing-your-repository/about-code-owners
+
+# Catch-all (repo infra: pyproject.toml, scripts/, README, etc.)
+*                          @ahillsley
+
+# Per-figure ownership
+/notebooks/figure_1/       @ahillsley
+/notebooks/figure_2/       @ahillsley  @gav-sturm  max.frank@czbiohub.org
+/notebooks/figure_5/       @ahillsley  max.frank@czbiohub.org
