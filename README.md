@@ -20,11 +20,15 @@ uv run jupyter lab
 
 ## Development
 
-One-time setup after cloning, to enable the pre-commit hook that strips
-notebook outputs before they're committed:
+One-time setup after cloning:
 
 ```bash
+# Enable the pre-commit hook that strips notebook outputs before commit
 uv run pre-commit install
+
+# Link the data/ directory to the central HPC analysis folder
+# (Biohub HPC only; on public release, replace this with the figshare download)
+ln -s /hpc/projects/icd.fast.ops/paper_v1_analysis data
 ```
 Needs to be changed
 The notebooks read h5ad files from `/hpc/projects/icd.fast.ops/...`; you must have read access to that path (Biohub HPC).
