@@ -18,13 +18,30 @@ uv sync
 uv run jupyter lab
 ```
 
-## Development
+## Usage
 
-One-time setup after cloning, to enable the pre-commit hook that strips
-notebook outputs before they're committed:
+Notebooks under `notebooks/figure_*/` can be run interactively in JupyterLab,
+or executed end-to-end from the command line with the helper script:
 
 ```bash
+# Re-run every notebook in the repo
+scripts/run_notebooks.sh
+
+# Re-run only the notebooks for a single figure
+scripts/run_notebooks.sh figure_5
+```
+
+## Development
+
+One-time setup after cloning:
+
+```bash
+# Enable the pre-commit hook that strips notebook outputs before commit
 uv run pre-commit install
+
+# Link the data/ directory to the central HPC analysis folder
+# (Biohub HPC only; on public release, replace this with the figshare download)
+ln -s /hpc/projects/icd.fast.ops/paper_v1_analysis data
 ```
 Needs to be changed
 The notebooks read h5ad files from `/hpc/projects/icd.fast.ops/...`; you must have read access to that path (Biohub HPC).
@@ -50,8 +67,4 @@ The structure of this repo is illustrated below.
 ├── LICENSE
 └── README.md
 ```
-
-## Usage
-
-
 
