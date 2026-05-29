@@ -9,6 +9,11 @@ Data paths used by each notebook in the repo, extracted from the notebook source
 - Precomputed experiment-experiment cosine similarity matrix (produced by `data_preprocessing/figure_1.py`):
   `/hpc/mydata/alexander.hillsley/ops/ops-paper-analysis/data_preprocessing/data/experiment_correlations_sim_matrix.csv`
 
+### `notebooks/figure_1/iss_correlation_heatmap.ipynb`
+
+- Precomputed experiment × experiment Pearson correlation matrix on log2 mean-normalised ISS barcode read frequencies (produced by `ops_monorepo/ops_model/analysis/iss_correlation_heatmap.py`):
+  `data/figures/figure_1/iss_barcode_freq_correlation_matrix.csv`
+
 ## Figure 2
 
 ### `notebooks/figure_2/model_comparison.ipynb`

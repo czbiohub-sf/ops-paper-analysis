@@ -8,6 +8,10 @@ This file maps the notebooks in this repo to the original scripts they were base
 Reference scripts: /hpc/mydata/alexander.hillsley/ops/ops_monorepo/ops_model/analysis/batch_effect.py
 -
 
+### `notebooks/figure_1/iss_correlation_heatmap.ipynb`
+Reference scripts: /hpc/mydata/alexander.hillsley/ops/ops_monorepo/ops_model/analysis/iss_correlation_heatmap.py
+-
+
 ## Figure 2
 
 ### `notebooks/figure_2/model_comparison.ipynb`
