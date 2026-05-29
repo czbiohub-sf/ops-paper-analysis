@@ -334,6 +334,15 @@ wheels = [
 ]
 
 [[package]]
+name = "et-xmlfile"
+version = "2.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/d3/38/af70d7ab1ae9d4da450eeec1fa3918940a5fafb9055e934af8d6eb0c2313/et_xmlfile-2.0.0.tar.gz", hash = "sha256:dab3f4764309081ce75662649be815c4c9081e88f0837825f90fd28317d4da54", size = 17234, upload-time = "2024-10-25T17:25:40.039Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c1/8b/5fe2cc11fee489817272089c4203e679c63b570a5aaeb18d852ae3cbba6a/et_xmlfile-2.0.0-py3-none-any.whl", hash = "sha256:7a91720bc756843502c3b7504c77b8fe44217c85c537d85037f0f536151b2caa", size = 18059, upload-time = "2024-10-25T17:25:39.051Z" },
+]
+
+[[package]]
 name = "executing"
 version = "2.2.1"
 source = { registry = "https://pypi.org/simple" }
@@ -397,6 +406,26 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/ce/a9/a780cc66f86335a6019f557a8aaca8fbb970728f0efd2430d15ff1beae0e/google_crc32c-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:14f87e04d613dfa218d6135e81b78272c3b904e2a7053b841481b38a7d901411", size = 33364, upload-time = "2025-12-16T00:40:22.96Z" },
     { url = "https://files.pythonhosted.org/packages/21/3f/3457ea803db0198c9aaca2dd373750972ce28a26f00544b6b85088811939/google_crc32c-1.8.0-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:cb5c869c2923d56cb0c8e6bcdd73c009c36ae39b652dbe46a05eb4ef0ad01454", size = 33740, upload-time = "2025-12-16T00:40:23.96Z" },
     { url = "https://files.pythonhosted.org/packages/df/c0/87c2073e0c72515bb8733d4eef7b21548e8d189f094b5dad20b0ecaf64f6/google_crc32c-1.8.0-cp312-cp312-win_amd64.whl", hash = "sha256:3cc0c8912038065eafa603b238abf252e204accab2a704c63b9e14837a854962", size = 34437, upload-time = "2025-12-16T00:35:21.395Z" },
+]
+
+[[package]]
+name = "gseapy"
+version = "1.2.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "matplotlib" },
+    { name = "numpy" },
+    { name = "pandas" },
+    { name = "requests" },
+    { name = "scipy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/f5/32/a5307b9dda181c0f3dfbae435fa6aa0d6b66174ce2cd7a4bc81d8a006007/gseapy-1.2.1.tar.gz", hash = "sha256:f5292ddd4dd9c66ad4f4e5fa2acceeaaf39341b0a508bcbe62617c449f1e8869", size = 148112, upload-time = "2026-04-27T17:02:29.4Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/1f/f7/1300c56a491749d140e532d8eb0db7c72ddefed1b7ca3728ecd47c079cb6/gseapy-1.2.1-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:674330565f38cc3e792151aee3044c721ad634cfd886239f7e0515cf04128f2b", size = 559803, upload-time = "2026-04-27T17:06:37.263Z" },
+    { url = "https://files.pythonhosted.org/packages/fb/27/5ff37bd4dc446004c654598a4869b4c6a1c90d9b010acb40f5b5c42c9c7c/gseapy-1.2.1-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:9e35c245ece853952155a57219cea6bcdfc7a438b4fd69ea1ee04312afd65fbf", size = 613233, upload-time = "2026-04-27T01:01:18.188Z" },
+    { url = "https://files.pythonhosted.org/packages/8e/3f/72ae7aa02ba7891471fedfa24f246c3ea9748efdf9e49f48ca659ccd9a98/gseapy-1.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:f8f8120d871ce0f6012c19f494c96b5fb4bf0f623eef84eb578c14ddcda8cce9", size = 634723, upload-time = "2026-04-27T17:05:53.297Z" },
+    { url = "https://files.pythonhosted.org/packages/4b/27/af1fef2cb0e5a802b38b8bca1d24f08d7ebe49b494c52080d24d1b91b44a/gseapy-1.2.1-cp312-cp312-win32.whl", hash = "sha256:2d0a88105947cea6979ab75b4fa5a470587885f03fd1d88b175b390213fad8b9", size = 435305, upload-time = "2026-04-27T18:35:57.288Z" },
+    { url = "https://files.pythonhosted.org/packages/14/ea/574e7fa17e03a59ba99ae5b4e3b8117ea1804c38d0ded029a93e819803e1/gseapy-1.2.1-cp312-cp312-win_amd64.whl", hash = "sha256:c4584edb4ac3b04f322cbd27f93aff6b7779c102d93a1ae2eb7e9124ed08c318", size = 453912, upload-time = "2026-04-27T17:09:30.007Z" },
 ]
 
 [[package]]
@@ -1057,15 +1086,29 @@ wheels = [
 ]
 
 [[package]]
+name = "openpyxl"
+version = "3.1.5"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "et-xmlfile" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/3d/f9/88d94a75de065ea32619465d2f77b29a0469500e99012523b91cc4141cd1/openpyxl-3.1.5.tar.gz", hash = "sha256:cf0e3cf56142039133628b5acffe8ef0c12bc902d2aadd3e0fe5878dc08d1050", size = 186464, upload-time = "2024-06-28T14:03:44.161Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c0/da/977ded879c29cbd04de313843e76868e6e13408a94ed6b987245dc7c8506/openpyxl-3.1.5-py2.py3-none-any.whl", hash = "sha256:5282c12b107bffeef825f4617dc029afaf41d0ea60823bbb665ef3079dc79de2", size = 250910, upload-time = "2024-06-28T14:03:41.161Z" },
+]
+
+[[package]]
 name = "ops-paper-analysis"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "anndata" },
+    { name = "gseapy" },
     { name = "ipykernel" },
     { name = "jupyterlab" },
     { name = "matplotlib" },
     { name = "numpy" },
+    { name = "openpyxl" },
     { name = "pandas" },
     { name = "scipy" },
     { name = "seaborn" },
@@ -1081,10 +1124,12 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "anndata" },
+    { name = "gseapy", specifier = ">=1.2.1" },
     { name = "ipykernel" },
     { name = "jupyterlab" },
     { name = "matplotlib" },
     { name = "numpy" },
+    { name = "openpyxl", specifier = ">=3.1.5" },
     { name = "pandas" },
     { name = "scipy" },
     { name = "seaborn" },
