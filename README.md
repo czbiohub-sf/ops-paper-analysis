@@ -71,3 +71,8 @@ The structure of this repo is illustrated below.
 └── README.md
 ```
 
+## Authors
+
+This repository is created and maintained by the [Leonetti Group](https://biohub.org/leonetti/) at the [Biohub in San Francisco](https://www.czbiohub.org/sf/).
+
+To get in touch please use the [GihHub issues](https://github.com/czbiohub-sf/grassp/issues) page.
