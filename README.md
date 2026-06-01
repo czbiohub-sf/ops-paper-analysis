@@ -1,7 +1,6 @@
-# CZ Biohub publication repository template 
+This repository contains scripts to reproduce key figures in the paper: A multimodal perturbation atlas defines the phenotypic resolution of cellular morphology
 
-This repo contains a template for starting new publication repository at the Biohub. It is prepared 
-to help to organize publication related materials.
+
 
 ## Setup
 
