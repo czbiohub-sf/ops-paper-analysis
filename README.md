@@ -13,6 +13,11 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 # Install dependencies (creates .venv/, reads uv.lock)
 uv sync
 
+# Download the dataset (~57 MB) and extract it into data/
+mkdir -p data
+curl -L -o altair.zip "<ZENODO_URL>"   # TODO: replace <ZENODO_URL> with the public Zenodo download link
+unzip -q altair.zip -d data && rm altair.zip
+
 # Launch JupyterLab
 uv run jupyter lab
 ```
@@ -30,20 +35,6 @@ scripts/run_notebooks.sh
 scripts/run_notebooks.sh figure_5
 scripts/run_notebooks.sh target_gene_selection
 ```
-
-## Development
-
-One-time setup after cloning:
-
-```bash
-# Enable the pre-commit hook that strips notebook outputs before commit
-uv run pre-commit install
-
-# Link the data/ directory to the central HPC analysis folder
-# (Biohub HPC only; on public release, replace this with the figshare download)
-ln -s /hpc/projects/icd.fast.ops/paper_v1_analysis data
-```
-The notebooks read their input files from `/hpc/projects/icd.fast.ops/...`; you must have read access to that path (Biohub HPC).
 
 ## Organization
 The structure of this repo is illustrated below.
@@ -70,13 +61,13 @@ The structure of this repo is illustrated below.
 ├── scripts/
 │   ├── analysis.sh
 │   └── run_notebooks.sh
-├── planning_docs/       # notebook/script & input-data-path mapping docs
-├── data/                # symlink to central HPC analysis folder (gitignored)
+├── data/                # folder where input data is downloaded (gitignored)
 ├── output/              # generated outputs (figures + tables), one subdir per notebook group (gitignored)
 ├── pyproject.toml
 ├── uv.lock
 ├── .python-version
 ├── LICENSE
+├── DEVELOPMENT.md
 └── README.md
 ```
 
