@@ -24,7 +24,10 @@ else
   base="notebooks"
 fi
 
-mapfile -t notebooks < <(find "$base" -name '*.ipynb' -not -path '*/.ipynb_checkpoints/*' | sort)
+notebooks=()
+while IFS= read -r nb; do
+  notebooks+=("$nb")
+done < <(find "$base" -name '*.ipynb' -not -path '*/.ipynb_checkpoints/*' | sort)
 if [[ ${#notebooks[@]} -eq 0 ]]; then
   echo "no notebooks found under $base" >&2
   exit 1
