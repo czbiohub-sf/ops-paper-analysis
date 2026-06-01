@@ -15,8 +15,9 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uv sync
 
 # Download the dataset (~57 MB) and extract it into data/
+# (archived on Zenodo: https://doi.org/10.5281/zenodo.20495192)
 mkdir -p data
-curl -L -o altair.zip "<ZENODO_URL>"   # TODO: replace <ZENODO_URL> with the public Zenodo download link
+curl -L -o altair.zip "https://zenodo.org/records/20495192/files/altair.zip?download=1"
 unzip -q altair.zip -d data && rm altair.zip
 
 # Launch JupyterLab
