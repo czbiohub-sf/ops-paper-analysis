@@ -43,7 +43,6 @@ uv run pre-commit install
 # (Biohub HPC only; on public release, replace this with the figshare download)
 ln -s /hpc/projects/icd.fast.ops/paper_v1_analysis data
 ```
-Needs to be changed
 The notebooks read h5ad files from `/hpc/projects/icd.fast.ops/...`; you must have read access to that path (Biohub HPC).
 
 ## Organization
@@ -52,15 +51,26 @@ The structure of this repo is illustrated below.
 ├── notebooks/
 │   ├── figure_1/
 │   │   ├── experiment_correlations.ipynb
-│   │   └── README.md
+│   │   └── iss_correlation_heatmap.ipynb
 │   ├── figure_2/
-│   │   ├── model_comparison.ipynb
-│   │   └── README.md
+│   │   └── model_comparison.ipynb
+│   ├── figure_3/
+│   │   ├── combined_reporter_titration.ipynb
+│   │   ├── marker_similarity_clustermap.ipynb
+│   │   ├── reporter_mAP_histogram.ipynb
+│   │   ├── reporters_vs_essentiallity.ipynb
+│   │   └── reporter_titration_plots.ipynb
 │   └── figure_5/
-│       ├── rna_ops_metrics.ipynb
-│       └── README.md
+│       ├── joint_heatmap.ipynb
+│       ├── mAP_complex_KO_scatter.ipynb
+│       ├── rna_image_confusion_matrix.ipynb
+│       └── rna_ops_metrics.ipynb
 ├── scripts/
-├── output/              # generated figures (figure_1/, figure_2/, figure_5/)
+│   ├── analysis.sh
+│   └── run_notebooks.sh
+├── planning_docs/       # notebook/script & input-data-path mapping docs
+├── data/                # symlink to central HPC analysis folder (gitignored)
+├── output/              # generated figures, one subdir per figure (gitignored)
 ├── pyproject.toml
 ├── uv.lock
 ├── .python-version
