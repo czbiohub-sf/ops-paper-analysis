@@ -101,3 +101,12 @@ Per model, three evaluation CSVs under `{model}/zscore_per_exp/paper_v1/all_live
   `/hpc/projects/icd.fast.ops/organelle_attribution/pca_optimized_v0.3/cell_dino/zscore_per_exp/paper_v1/with_cp/with_4i/all_livecell/fixed_80%/cosine/titration_guide_median/Phase/Phase_titration.csv`
 - Crop-seq EBI mAP (currently in ops_monorepo scratch; move before release):
   `/hpc/mydata/alexander.hillsley/ops/ops_monorepo/experiments/scratch/crop-seq/20260520_mAP_ebi_cropseq.csv`
+
+## SI
+
+### `notebooks/SI/analysis_plots_co_cultureQC.ipynb`
+
+- Flow-cytometry tube-name workbook (read sheet-by-sheet: `growthQC_*`, `gQC_CER2_7-9-10`; one row per tube with `cell_line`, `day`, `experiment`, `directory`, `fcs`):
+  `data/figures/SI/flow_tubenames_20250813.xlsx`
+- eFlow GFP-gate exports (`% of parent` GFP-positive per tube), one workbook per batch:
+  `data/figures/SI/gfp_pos_CER1.xlsx`, `gfp_pos_CER2.xlsx`, `gfp_pos_CER2_2.xlsx`, `gfp_pos_CER2_3.xlsx`, `gfp_pos_CER3.xlsx`, `gfp_pos_CER3_2.xlsx`, `gfp_pos_CER4.xlsx`, `gfp_pos_CER4_2.xlsx`

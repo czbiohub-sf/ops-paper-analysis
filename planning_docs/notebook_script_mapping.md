@@ -49,3 +49,9 @@ Reference scripts: /hpc/mydata/alexander.hillsley/ops/cropseq1000/notebooks/join
 ### `notebooks/figure_5/rna_ops_metrics.ipynb`
 Reference scripts: /hpc/mydata/alexander.hillsley/ops/ops_monorepo/ops_model/analysis/rna_ops_metrics.py
 -
+
+## SI
+
+### `notebooks/SI/analysis_plots_co_cultureQC.ipynb`
+Reference scripts: 
+-
