@@ -19,15 +19,16 @@ uv run jupyter lab
 
 ## Usage
 
-Notebooks under `notebooks/figure_*/` can be run interactively in JupyterLab,
+Notebooks under `notebooks/` can be run interactively in JupyterLab,
 or executed end-to-end from the command line with the helper script:
 
 ```bash
 # Re-run every notebook in the repo
 scripts/run_notebooks.sh
 
-# Re-run only the notebooks for a single figure
+# Re-run only one group (a figure, or target_gene_selection)
 scripts/run_notebooks.sh figure_5
+scripts/run_notebooks.sh target_gene_selection
 ```
 
 ## Development
@@ -42,7 +43,7 @@ uv run pre-commit install
 # (Biohub HPC only; on public release, replace this with the figshare download)
 ln -s /hpc/projects/icd.fast.ops/paper_v1_analysis data
 ```
-The notebooks read h5ad files from `/hpc/projects/icd.fast.ops/...`; you must have read access to that path (Biohub HPC).
+The notebooks read their input files from `/hpc/projects/icd.fast.ops/...`; you must have read access to that path (Biohub HPC).
 
 ## Organization
 The structure of this repo is illustrated below.
@@ -59,17 +60,19 @@ The structure of this repo is illustrated below.
 │   │   ├── reporter_mAP_histogram.ipynb
 │   │   ├── reporters_vs_essentiallity.ipynb
 │   │   └── reporter_titration_plots.ipynb
-│   └── figure_5/
-│       ├── joint_heatmap.ipynb
-│       ├── mAP_complex_KO_scatter.ipynb
-│       ├── rna_image_confusion_matrix.ipynb
-│       └── rna_ops_metrics.ipynb
+│   ├── figure_5/
+│   │   ├── joint_heatmap.ipynb
+│   │   ├── mAP_complex_KO_scatter.ipynb
+│   │   ├── rna_image_confusion_matrix.ipynb
+│   │   └── rna_ops_metrics.ipynb
+│   └── target_gene_selection/   # gene-panel selection (no figure output)
+│       └── gene_panel_selection.ipynb
 ├── scripts/
 │   ├── analysis.sh
 │   └── run_notebooks.sh
 ├── planning_docs/       # notebook/script & input-data-path mapping docs
 ├── data/                # symlink to central HPC analysis folder (gitignored)
-├── output/              # generated figures, one subdir per figure (gitignored)
+├── output/              # generated outputs (figures + tables), one subdir per notebook group (gitignored)
 ├── pyproject.toml
 ├── uv.lock
 ├── .python-version
