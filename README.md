@@ -11,6 +11,9 @@ This project uses [uv](https://docs.astral.sh/uv/) for dependency management.
 # One-time: install uv if you don't have it
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
+# Clone the repository and move to it
+cd ops-paper-analysis
+
 # Install dependencies (creates .venv/, reads uv.lock)
 uv sync
 
