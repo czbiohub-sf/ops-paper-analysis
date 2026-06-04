@@ -12,6 +12,7 @@ This project uses [uv](https://docs.astral.sh/uv/) for dependency management.
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Clone the repository and move to it
+git clone https://github.com/czbiohub-sf/ops-paper-analysis.git
 cd ops-paper-analysis
 
 # Install dependencies (creates .venv/, reads uv.lock)
