@@ -1,4 +1,5 @@
-This repository contains scripts to reproduce key figures in the paper: A multimodal perturbation atlas defines the phenotypic resolution of cellular morphology
+# A multimodal perturbation atlas defines the phenotypic resolution of cellular morphology
+This repository contains scripts to reproduce key figures in the paper: [A multimodal perturbation atlas defines the phenotypic resolution of cellular morphology](https://doi.org/10.64898/2026.06.01.728087)
 
 
 
@@ -10,8 +11,18 @@ This project uses [uv](https://docs.astral.sh/uv/) for dependency management.
 # One-time: install uv if you don't have it
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
+# Clone the repository and move to it
+git clone https://github.com/czbiohub-sf/ops-paper-analysis.git
+cd ops-paper-analysis
+
 # Install dependencies (creates .venv/, reads uv.lock)
 uv sync
+
+# Download the dataset (~57 MB) and extract it into data/
+# (archived on Zenodo: https://doi.org/10.5281/zenodo.20495192)
+mkdir -p data
+curl -L -o altair.zip "https://zenodo.org/records/20495192/files/altair.zip?download=1"
+unzip -q altair.zip -d data && rm altair.zip
 
 # Launch JupyterLab
 uv run jupyter lab
@@ -19,30 +30,17 @@ uv run jupyter lab
 
 ## Usage
 
-Notebooks under `notebooks/figure_*/` can be run interactively in JupyterLab,
+Notebooks under `notebooks/` can be run interactively in JupyterLab,
 or executed end-to-end from the command line with the helper script:
 
 ```bash
 # Re-run every notebook in the repo
 scripts/run_notebooks.sh
 
-# Re-run only the notebooks for a single figure
+# Re-run only one group (a figure, or target_gene_selection)
 scripts/run_notebooks.sh figure_5
+scripts/run_notebooks.sh target_gene_selection
 ```
-
-## Development
-
-One-time setup after cloning:
-
-```bash
-# Enable the pre-commit hook that strips notebook outputs before commit
-uv run pre-commit install
-
-# Link the data/ directory to the central HPC analysis folder
-# (Biohub HPC only; on public release, replace this with the figshare download)
-ln -s /hpc/projects/icd.fast.ops/paper_v1_analysis data
-```
-The notebooks read h5ad files from `/hpc/projects/icd.fast.ops/...`; you must have read access to that path (Biohub HPC).
 
 ## Organization
 The structure of this repo is illustrated below.
@@ -59,21 +57,28 @@ The structure of this repo is illustrated below.
 │   │   ├── reporter_mAP_histogram.ipynb
 │   │   ├── reporters_vs_essentiallity.ipynb
 │   │   └── reporter_titration_plots.ipynb
-│   └── figure_5/
-│       ├── joint_heatmap.ipynb
-│       ├── mAP_complex_KO_scatter.ipynb
-│       ├── rna_image_confusion_matrix.ipynb
-│       └── rna_ops_metrics.ipynb
+│   ├── figure_5/
+│   │   ├── joint_heatmap.ipynb
+│   │   ├── mAP_complex_KO_scatter.ipynb
+│   │   ├── rna_image_confusion_matrix.ipynb
+│   │   └── rna_ops_metrics.ipynb
+│   └── target_gene_selection/   # gene-panel selection (no figure output)
+│       └── gene_panel_selection.ipynb
 ├── scripts/
 │   ├── analysis.sh
 │   └── run_notebooks.sh
-├── planning_docs/       # notebook/script & input-data-path mapping docs
-├── data/                # symlink to central HPC analysis folder (gitignored)
-├── output/              # generated figures, one subdir per figure (gitignored)
+├── data/                # folder where input data is downloaded (gitignored)
+├── output/              # generated outputs (figures + tables), one subdir per notebook group (gitignored)
 ├── pyproject.toml
 ├── uv.lock
 ├── .python-version
 ├── LICENSE
+├── DEVELOPMENT.md
 └── README.md
 ```
 
+## Authors
+
+This repository is created and maintained by the [Leonetti Group](https://biohub.org/leonetti/) at the [Biohub in San Francisco](https://www.czbiohub.org/sf/).
+
+To get in touch please use the [GihHub issues](https://github.com/czbiohub-sf/grassp/issues) page.

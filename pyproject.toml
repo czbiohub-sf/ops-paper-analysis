@@ -25,6 +25,7 @@ dependencies = [
     "scib>=1.1.7",
     "igraph>=1.0.0",
     "plotly>=6.9.0",
+    "goatools>=1.6.5",
 ]
 
 [dependency-groups]
