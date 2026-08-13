@@ -117,17 +117,16 @@ def build(outstem="atlas_construction_accuracy"):
     ax.text(5.55, 1.42, "OR", fontsize=19, ha="center", va="top", fontweight="bold")
     ax.text(7.85, 1.5, "protein complex\n($n$ = 99 choices)", fontsize=19, ha="center", va="top")
 
-    # ---- input: bag of N cells (bottom-left, coloured cells) -------------
+    # ---- input: bag of N cells (bottom-left, tidy flower packing) --------
     bag_cx, bag_cy = 1.15, 1.55
     ax.add_patch(Ellipse((bag_cx, bag_cy), 1.55, 1.05, facecolor="white",
                          edgecolor=INK, lw=1.5, zorder=3))
-    rng = np.random.default_rng(0)
-    for i in range(7):
-        dx = rng.uniform(-0.46, 0.46)
-        dy = rng.uniform(-0.27, 0.27)
-        ax.add_patch(Circle((bag_cx + dx, bag_cy + dy), 0.11,
-                            facecolor=CELL_COLORS[i % len(CELL_COLORS)],
-                            edgecolor=INK, lw=0.8, zorder=4))
+    pts = [(0.0, 0.0)]                                   # centre + 5-ring
+    for a in np.deg2rad(np.linspace(90, 90 + 288, 5)):
+        pts.append((0.46 * np.cos(a), 0.31 * np.sin(a)))
+    for (px, py), col in zip(pts, CELL_COLORS):
+        ax.add_patch(Circle((bag_cx + px, bag_cy + py), 0.135,
+                            facecolor=col, edgecolor=INK, lw=0.9, zorder=4))
     ax.text(bag_cx, 0.78, "bag of\n$N$ cells", fontsize=19, ha="center", va="top")
 
     fig.subplots_adjust(left=0.005, right=0.995, top=0.995, bottom=0.01)
