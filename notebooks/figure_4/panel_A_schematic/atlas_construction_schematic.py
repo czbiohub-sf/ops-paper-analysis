@@ -6,8 +6,11 @@ predictive accuracy (bar length); the top-k form the "Top-predictive cells".
 The classifier predicts either a gene KO / NTC label (n=1,001) or a protein
 complex (n=99).
 
-Outputs editable SVG (+ PNG) with embedded fonts (pdf.fonttype 42).
+Writes an editable SVG (+ PNG) to `output/figure_4/`; SVG keeps <text> elements
+rather than path-tracing the glyphs, so labels stay editable in Illustrator.
 """
+
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch, Circle, Rectangle, FancyBboxPatch, Ellipse
@@ -17,6 +20,10 @@ plt.rcParams["pdf.fonttype"] = 42
 plt.rcParams["svg.fonttype"] = "none"
 plt.rcParams["font.family"] = "sans-serif"
 plt.rcParams["font.sans-serif"] = ["Arial", "Helvetica", "DejaVu Sans"]
+
+# notebooks/figure_4/panel_A_schematic/ -> repo root is 3 levels up.
+REPO_ROOT = Path(__file__).resolve().parents[3]
+FIGURES_DIR = REPO_ROOT / "output" / "figure_4"
 
 # ---- palette (pink -> purple) --------------------------------------------
 CELL_COLORS = ["#d94f9a", "#b8368a", "#6f3f97", "#e78fc0", "#5e3a87", "#d94f9a"]
@@ -130,10 +137,11 @@ def build(outstem="atlas_construction_accuracy"):
     ax.text(bag_cx, 0.78, "bag of\n$N$ cells", fontsize=19, ha="center", va="top")
 
     fig.subplots_adjust(left=0.005, right=0.995, top=0.995, bottom=0.01)
+    FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     for ext in ("svg", "png"):
-        fig.savefig(f"{outstem}.{ext}", dpi=300, bbox_inches="tight",
-                    facecolor="white")
-    print(f"wrote {outstem}.svg and {outstem}.png")
+        out = FIGURES_DIR / f"{outstem}.{ext}"
+        fig.savefig(out, dpi=300, bbox_inches="tight", facecolor="white")
+        print(f"wrote {out}")
     return fig
 
 
