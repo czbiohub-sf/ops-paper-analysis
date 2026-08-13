@@ -1,4 +1,4 @@
-"""Figure 4A schematic: atlas construction via a Set Transformer classifier.
+"""Figure 3A schematic: atlas construction via a Set Transformer classifier.
 
 Cells -> Cell-DINO embeddings -> Set Transformer classifier -> prediction
 performance. Cells are ranked by their per-cell contribution to the classifier's
@@ -6,7 +6,7 @@ predictive accuracy (bar length); the top-k form the "Top-predictive cells".
 The classifier predicts either a gene KO / NTC label (n=1,001) or a protein
 complex (n=99).
 
-Writes an editable SVG (+ PNG) to `output/figure_4/`; SVG keeps <text> elements
+Writes an editable SVG (+ PNG) to `output/figure_3/`; SVG keeps <text> elements
 rather than path-tracing the glyphs, so labels stay editable in Illustrator.
 """
 
@@ -21,9 +21,9 @@ plt.rcParams["svg.fonttype"] = "none"
 plt.rcParams["font.family"] = "sans-serif"
 plt.rcParams["font.sans-serif"] = ["Arial", "Helvetica", "DejaVu Sans"]
 
-# notebooks/figure_4/panel_A_schematic/ -> repo root is 3 levels up.
+# notebooks/figure_3/panel_A_schematic/ -> repo root is 3 levels up.
 REPO_ROOT = Path(__file__).resolve().parents[3]
-FIGURES_DIR = REPO_ROOT / "output" / "figure_4"
+FIGURES_DIR = REPO_ROOT / "output" / "figure_3"
 
 # ---- palette (pink -> purple) --------------------------------------------
 CELL_COLORS = ["#d94f9a", "#b8368a", "#6f3f97", "#e78fc0", "#5e3a87", "#d94f9a"]

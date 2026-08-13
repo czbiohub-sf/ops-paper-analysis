@@ -51,7 +51,18 @@ The structure of this repo is illustrated below.
 │   │   └── iss_correlation_heatmap.ipynb
 │   ├── figure_2/
 │   │   └── model_comparison.ipynb
-│   ├── figure_3/
+│   ├── figure_3/                   # one folder per panel
+│   │   ├── panel_A_schematic/
+│   │   │   └── atlas_construction_schematic.py
+│   │   ├── panel_B_accuracy/
+│   │   │   └── eval_accuracy_curves.ipynb
+│   │   ├── panel_C_scaling/
+│   │   │   └── training_data_scaling.ipynb
+│   │   ├── panel_D_embedding_map/
+│   │   │   └── embedding_map_violin.ipynb
+│   │   └── panel_L-N_traversals/
+│   │       └── counterfactual_traversal_violins.ipynb
+│   ├── figure_4/
 │   │   ├── combined_reporter_titration.ipynb
 │   │   ├── marker_similarity_clustermap.ipynb
 │   │   ├── reporter_mAP_histogram.ipynb
