@@ -21,8 +21,8 @@ uv sync
 # Download the dataset (~57 MB) and extract it into data/
 # (archived on Zenodo: https://doi.org/10.5281/zenodo.20495192)
 mkdir -p data
-curl -L -o altair.zip "https://zenodo.org/records/20495192/files/altair.zip?download=1"
-unzip -q altair.zip -d data && rm altair.zip
+curl -L -o altair_v2.zip "https://zenodo.org/records/21970895/files/altair_v2.zip?download=1"
+unzip -q altair_v2.zip -d data && rm altair_v2.zip
 
 # Launch JupyterLab
 uv run jupyter lab
